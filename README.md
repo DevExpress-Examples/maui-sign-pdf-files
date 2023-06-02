@@ -15,7 +15,7 @@ This example shows how to use PDF Document API in .NET MAUI applications. This a
 
 ## Documentation
 
-* [Use Office File API in .NET MAUI Applications (macOS, iOS, Android)](https://docs.devexpress.com/OfficeFileAPI/404423/use-pdf-document-api-in-net-maui-applications)
+* [Use Office File API in .NET MAUI Applications (macOS, iOS, Android)](https://docs.devexpress.com/OfficeFileAPI/404423/use-pdf-document-api-in-net-maui-applications?v=23.1)
 
 ## More Examples
 
