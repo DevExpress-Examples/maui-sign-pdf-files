@@ -2,7 +2,12 @@
 <!-- default badges end -->
 # DevExpress .NET MAUI Controls - Sign PDF Files
 
-This example shows how to use PDF Document API in .NET MAUI applications. This application opens a file picker to that a user can select a file to sign. After the file is signer, the application shares this file wth other applications.
+This repository contains the following projects that show how to use PDF Document API in .NET MAUI applications:
+
+* [Sign a PDF File with the Predefined Signature's Location](./CS/Sign_PDF_File_1-Get_Started/README.md)
+* [Find and Fill Signature Fields](./CS/Sign_PDF_File_2-Detect_Signature_Field/README.md)
+
+These projects open a file picker to that a user can select a file to sign. After the file is signer, applications share this file with other applications.
 
 > **Note**
 >

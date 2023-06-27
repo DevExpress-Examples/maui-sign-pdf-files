@@ -10,10 +10,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>SignPdfExample</ApplicationTitle>
+		<ApplicationTitle>SignPdf_DetectSignature</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.signpdfexample</ApplicationId>
+		<ApplicationId>com.companyname.signpdfdetectsignature</ApplicationId>
 		<ApplicationIdGuid>2251c44e-7e49-4175-b351-e1d7a6d7101c</ApplicationIdGuid>
 
 		<!-- Versions -->
