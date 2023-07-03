@@ -5,9 +5,53 @@ This project uses the [.NET MAUI Community Toolkit DrawingView](https://learn.mi
 
 <img src="./media/drawable_signature.gif" alt="drawing" width="300"/>
 
+## Implementation Details
+
 > **Note**
 >
-> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. Please refer to the following page for pricing information: [DevExpress Subscription](https://www.devexpress.com/Subscriptions/).
+> PDF-related functionality is included in our [Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
+>
+> To run this example, you need [DevExpress Universal](https://www.devexpress.com/subscriptions/universal.xml), [DXperience](https://www.devexpress.com/subscriptions/dxperience.xml) or [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
+
+The [PdfDocumentProcessor](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor) class includes APIs that allow you to manipulate PDF files.
+
+To open and sign a PDF file in a .NET MAUI application, you should copy the PDF and PFX certificate files from the application bundle to a device folder:
+
+```csharp
+public async Task<string> CopyWorkingFilesToAppData(string fileName) {
+    using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(fileName);
+    string targetFile = Path.Combine(FileSystem.Current.AppDataDirectory, fileName);
+    using FileStream outputStream = File.OpenWrite(targetFile);
+    fileStream.CopyTo(outputStream);
+    return targetFile;
+}
+```
+
+After that, you can use the [PdfDocumentProcessor.LoadDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.LoadDocument.overloads) method to open the PDF file.
+
+This project uses the following members to find the first available signature field: 
+
+* The [PdfAcroFormFacade.GetFields](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfAcroFormFacade.GetFields) method finds all fields in the PDF file. 
+* The [PdfFormFieldFacade.Type](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfFormFieldFacade.Type) property helps locate signature fields.  
+
+The [PDFSignatureBuilder](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfSignatureBuilder) class stores the following information about the signature:
+
+* PFX certificate file
+* Location of the person who signs the document
+* Name of the person who signs the document
+* Reason for signing the document
+* Signature image that is embedded in the PDF file
+
+This project uses the [DrawingView](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/drawingview#multiline-usage) control to draw a signature. To convert a drawn signature to a JPEG image, the project uses the following code:
+
+```csharp
+using Stream origJpgStream = await drawingView.GetImageStream(200, 200);
+origJpgStream.Seek(0, SeekOrigin.Begin);
+Microsoft.Maui.Graphics.IImage img = PlatformImage.FromStream(origJpgStream, ImageFormat.Jpeg);
+var jpegImageBytes = img.AsBytes(ImageFormat.Png);
+```
+
+After the document is signed, the [PdfDocumentProcessor.SaveDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.SaveDocument.overloads) method saves the signed PDF file.
 
 ## Documentation
 
