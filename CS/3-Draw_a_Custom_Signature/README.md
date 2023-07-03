@@ -11,7 +11,7 @@ This project uses the [.NET MAUI Community Toolkit DrawingView](https://learn.mi
 >
 > PDF-related functionality is included in our [Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
 >
-> To run this example, you need [DevExpress Universal](https://www.devexpress.com/subscriptions/universal.xml), [DXperience](https://www.devexpress.com/subscriptions/dxperience.xml) or [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
+> To run this example, you need [DevExpress Universal](https://www.devexpress.com/subscriptions/universal.xml) or [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
 
 The [PdfDocumentProcessor](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor) class includes APIs that allow you to manipulate PDF files.
 
