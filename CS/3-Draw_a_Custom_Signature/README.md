@@ -29,7 +29,10 @@ public async Task<string> CopyWorkingFilesToAppData(string fileName) {
 
 After that, you can use the [PdfDocumentProcessor.LoadDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.LoadDocument.overloads) method to open the PDF file.
 
-This project calls the [PdfAcroFormFacade.GetFields](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfAcroFormFacade.GetFields) method to find all the PDF file fields. Once the fields are found, use the [PdfFormFieldFacade.Type](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfFormFieldFacade.Type) property to get only signature fields. The project signs the first found signature field. 
+This project uses the following members to find the first available signature field: 
+
+* The [PdfAcroFormFacade.GetFields](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfAcroFormFacade.GetFields) method finds all fields in the PDF file. 
+* The [PdfFormFieldFacade.Type](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfFormFieldFacade.Type) property helps locate signature fields.  
 
 The [PDFSignatureBuilder](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfSignatureBuilder) class stores the following information about the signature:
 
@@ -48,7 +51,7 @@ Microsoft.Maui.Graphics.IImage img = PlatformImage.FromStream(origJpgStream, Ima
 var jpegImageBytes = img.AsBytes(ImageFormat.Png);
 ```
 
-After the document is signed, call the [PdfDocumentProcessor.SaveDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.SaveDocument.overloads) method to save the signed PDF file.
+After the document is signed, the [PdfDocumentProcessor.SaveDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.SaveDocument.overloads) method saves the signed PDF file.
 
 ## Documentation
 
