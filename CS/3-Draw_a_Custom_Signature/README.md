@@ -1,7 +1,7 @@
 
-# Use Office File API to Draw a Signature and Sign a PDF File
+# Use the DevExpress Office File API to Draw a Signature and Sign a PDF File
 
-This project uses the [.NET MAUI Community Toolkit DrawingView](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/drawingview#using-the-drawingview) to display a signature pad. This pad allows you to draw your signature and place it in the specified PDF document. After the file is signed, the application shares this file with other applications.
+This project uses the [.NET MAUI Community Toolkit DrawingView](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/drawingview#using-the-drawingview) to display a signature pad. This pad allows you to draw your signature and place it in the specified PDF document (using the DevExpress Office File API). Once the file is signed, the app can share the file with other applications.
 
 <img src="./media/drawable_signature.gif" alt="drawing" width="300"/>
 
@@ -9,13 +9,11 @@ This project uses the [.NET MAUI Community Toolkit DrawingView](https://learn.mi
 
 > **Note**
 >
-> PDF-related functionality is included in our [Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
->
-> To run this example, you need [DevExpress Universal](https://www.devexpress.com/subscriptions/universal.xml) or [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) subscription.
+> PDF-related functionality described herein requires the DevExpress [Office File API](https://www.devexpress.com/products/net/office-file-api/) or [DevExpress Universal](https://www.devexpress.com/subscriptions/universal.xml) Subscription. For purchase/licensing information, please visit [devexpress.com](https://www.devexpress.com).
 
-The [PdfDocumentProcessor](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor) class includes APIs that allow you to manipulate PDF files.
+Our [PdfDocumentProcessor](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor) class includes APIs designed to modify PDF files.
 
-To open and sign a PDF file in a .NET MAUI application, you should copy the PDF and PFX certificate files from the application bundle to a device folder:
+To open and sign a PDF file in a .NET MAUI application, you must copy PDF and PFX certificate files from the application bundle to a device folder:
 
 ```csharp
 public async Task<string> CopyWorkingFilesToAppData(string fileName) {
@@ -27,12 +25,12 @@ public async Task<string> CopyWorkingFilesToAppData(string fileName) {
 }
 ```
 
-After that, you can use the [PdfDocumentProcessor.LoadDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.LoadDocument.overloads) method to open the PDF file.
+Once implemented, you can use the [PdfDocumentProcessor.LoadDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.LoadDocument.overloads) method to open the PDF file.
 
 This project uses the following members to find the first available signature field: 
 
-* The [PdfAcroFormFacade.GetFields](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfAcroFormFacade.GetFields) method finds all fields in the PDF file. 
-* The [PdfFormFieldFacade.Type](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfFormFieldFacade.Type) property helps locate signature fields.  
+* [PdfAcroFormFacade.GetFields](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfAcroFormFacade.GetFields) method: finds all fields in the PDF file. 
+* The [PdfFormFieldFacade.Type](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfFormFieldFacade.Type) property: helps locate signature fields.  
 
 The [PDFSignatureBuilder](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfSignatureBuilder) class stores the following information about the signature:
 
