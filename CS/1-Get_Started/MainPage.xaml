@@ -6,14 +6,14 @@
              Title="Sign PDF File">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="15"
+        <dx:DXStackLayout Orientation="Vertical"
+            ItemSpacing="15"
             VerticalOptions="Center">
 
-                <dx:DXImage x:Name="imageControl"
-                    Source="logo"
-                    HeightRequest="300"
-                    HorizontalOptions="Start" Aspect="AspectFit" />  
+            <dx:DXImage x:Name="imageControl"
+                Source="logo"
+                HeightRequest="300"
+                HorizontalOptions="Start" Aspect="AspectFit" />  
             
             <Label
                 Text="Sign PDF Files"
@@ -33,7 +33,7 @@
                 Clicked="OnOpenWebButtonClicked"
                 HorizontalOptions="Center" />
 
-        </VerticalStackLayout>
+        </dx:DXStackLayout>
     </ScrollView>
 
 </ContentPage>
