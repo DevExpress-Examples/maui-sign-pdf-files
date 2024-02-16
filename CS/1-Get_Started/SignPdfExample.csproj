@@ -42,8 +42,5 @@
     <PackageReference Include="DevExpress.Drawing.Skia" Version="23.2.*" />
     <PackageReference Include="DevExpress.Pdf.SkiaRenderer" Version="23.2.*" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.3" />
-    <PackageReference Include="DevExpress.Maui.Editors" Version="23.2.*" />
-    <PackageReference Include="DevExpress.Maui.Controls" Version="23.2.*" />
-    <PackageReference Include="DevExpress.Data" Version="23.2.*" />
   </ItemGroup>
 </Project>
