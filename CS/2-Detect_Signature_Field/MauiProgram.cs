@@ -1,4 +1,5 @@
 ﻿using DevExpress.Drawing.Internal;
+using DevExpress.Maui;
 using Microsoft.Extensions.Logging;
 using SkiaSharp;
 using SkiaSharp.Views.Maui.Controls.Hosting;
@@ -14,6 +15,10 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseDevExpress()
+			.UseDevExpressCollectionView()
+			.UseDevExpressControls()
+			.UseDevExpressEditors()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
