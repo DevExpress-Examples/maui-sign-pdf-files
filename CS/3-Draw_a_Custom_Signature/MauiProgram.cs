@@ -9,7 +9,6 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
-        // DXDrawingEngine.ForceSkia();
 
         var builder = MauiApp.CreateBuilder();
         builder
