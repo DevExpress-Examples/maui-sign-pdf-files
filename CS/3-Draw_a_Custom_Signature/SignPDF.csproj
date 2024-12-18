@@ -35,8 +35,8 @@
     <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.10" />
     <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
     <PackageReference Include="DevExpress.Document.Processor" Version="24.2.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
