@@ -45,5 +45,6 @@
     <PackageReference Include="DevExpress.Maui.Controls" Version="24.2.3" />
     <PackageReference Include="DevExpress.Pdf.SkiaRenderer" Version="24.2.3" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.3" />
+    <TrimmableAssembly Include="DevExpress.Data.v24.2" />
   </ItemGroup>
 </Project>
