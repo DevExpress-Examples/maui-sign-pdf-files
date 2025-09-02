@@ -22,7 +22,7 @@ These projects open a file picker to that a user can select a file to sign. Afte
 
 ## Documentation
 
-* [Use Office File API in .NET MAUI Applications (macOS, iOS, Android)](https://docs.devexpress.com/OfficeFileAPI/404423/use-pdf-document-api-in-net-maui-applications?v=23.1)
+* [Use Office File API in .NET MAUI Applications (macOS, iOS, Android)](https://docs.devexpress.com/OfficeFileAPI/404423/use-pdf-document-api-in-net-maui-applications)
 
 ## More Examples
 
@@ -34,3 +34,4 @@ These projects open a file picker to that a user can select a file to sign. Afte
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
